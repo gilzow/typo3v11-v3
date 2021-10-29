@@ -6,6 +6,11 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 #Include our common.sh
 . "${DIR}/common.sh"
 
+export VERSION=1.2.1
+wget -nc "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-${VERSION}-linux-x86-64.tar.gz"  -O - | tar -xz -C ${PLATFORM_CACHE_DIR}
+mkdir -p /app/.global/bin
+cp "${PLATFORM_CACHE_DIR}/libwebp-$VERSION-linux-x86-64/bin/*" /app/.global/bin/
+
 # There is no way to tell during the build stage if the CMS is already installed, so we'll run the command and then
 # determine during the deploy stage whether or not we've installed it already
 composer exec typo3cms install:setup -- --install-steps-config=src/SetupConfiguration.yaml --no-interaction --skip-extension-setup
