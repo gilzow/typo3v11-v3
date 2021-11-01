@@ -11,7 +11,7 @@
 
     # Defines the upstream according to the form `<application-name>:http`,
     # where the `name` attribute from `.platform.app.yaml` is used.
-    upstream: "app:http"
+    upstream: "app1:http"
 
     # Optional route identifier; constant across all environments. 
     # 
