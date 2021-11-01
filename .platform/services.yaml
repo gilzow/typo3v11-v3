@@ -8,7 +8,7 @@
 # `.platform.app.yaml` file.
 # 
 # See https://docs.platform.sh/configuration/services/mysql.html.
-db:
+mdb:
     type: mysql:10.4
     disk: 2048
 

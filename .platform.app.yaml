@@ -4,7 +4,7 @@
 # See https://docs.platform.sh/configuration/app.html
 
 # The name of this app. Must be unique within a project.
-name: app
+name: app1
 
 # The runtime the application uses.
 type: php:7.4
@@ -34,7 +34,7 @@ build:
 relationships:
     # MariaDB/MySQL will then be accessible to the app from 'database' relationship.
     # The service name `db` must match the top-level attribute in `.platform/services.yaml`.
-    database: 'db:mysql'
+    database: 'mdb:mysql'
 
     # Redis will then be accessible to the app from 'rediscache' relationship.
     # The service name `cache` must match the top-level attribute in `.platform/services.yaml`.
@@ -122,9 +122,9 @@ mounts:
         source: local
         source_path: "var"
     # Contains site configuration files, needs to be writable from the CMS and during deploy
-    "config/sites":
+    "config":
         source: local
-        source_path: "sites"
+        source_path: "config"
 # The hooks that will be performed when the package is deployed.
 hooks:
     # The build hook runs after Composer to finish preparing up your code.
