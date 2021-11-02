@@ -1,0 +1,21 @@
+name: testing
+on: push
+  #pull_request:
+    #types: [opened, synchronize]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: 'Get psh environmental URL'
+    outputs:             
+      commit_status: ${{ steps.status.outputs.env_status }}
+      env_url: ${{ steps.url.outputs.env_url }}  
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'wait for deployment'
+        run: |
+          echo "step 1"
+      - name: "step 2"
+        run: |
+          echo "step 2"
+
